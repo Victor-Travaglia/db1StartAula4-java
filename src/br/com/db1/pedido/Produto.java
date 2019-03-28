@@ -4,15 +4,17 @@ public class Produto {
 	
 	String codigo;
 	String descricao;
-	Double valor;
 	
-	public Produto(String codigo, String descricao, Double valor) {
+	public Produto(String codigo, String descricao) {
+		if(codigo == null) {
+			throw new RuntimeException("Codigo é obrigatório");
+		}
+		
+		if(descricao == null) {
+			throw new RuntimeException("Descricao é obrigatória");
+		}
+		
 		this.codigo = codigo;
 		this.descricao = descricao;
-		this.valor = valor;
-	}
-	
-	public Double getValor() {
-		return valor;
 	}
 }
