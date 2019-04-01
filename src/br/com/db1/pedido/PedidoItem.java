@@ -6,7 +6,7 @@ public class PedidoItem {
 	private Double valor;
 	private Produto produto;
 	
-	public PedidoItem(Double quantidade, Double valor, Produto produto) {
+	public PedidoItem(Double quantidade, Produto produto) {
 		if(quantidade == null) {
 			throw new RuntimeException("Quantidade é obrigatória para o item");
 		}
@@ -24,7 +24,19 @@ public class PedidoItem {
 		}
 		
 		this.quantidade = quantidade;
-		this.valor = valor;
+		this.valor = produto.getValor();
 		this.produto = produto;
+	}
+	
+	public Produto getProduto() {
+		return produto;
+	}
+	
+	public Double getQuantidade() {
+		return quantidade;
+	}
+	
+	public Double getValor() {
+		return valor;
 	}
 }

@@ -2,11 +2,11 @@ package br.com.db1.pedido;
 
 public class Cliente {
 	
-	String nome;
-	String cpf;
-	StatusCliente status = StatusCliente.ATIVO;
+	private String nome;
+	private String cpf;
+	private StatusCliente status;
 	
-	public Cliente(String nome, String cpf, StatusCliente status) {
+	public Cliente(String nome, String cpf) {
 		if(nome == null) {
 			throw new RuntimeException("Nome é obrigatório");
 		}
@@ -21,7 +21,18 @@ public class Cliente {
 
 		this.nome = nome;
 		this.cpf = cpf;
-		this.status = status;
+		this.status = StatusCliente.ATIVO;
 	}
 	
+	public String getNome() {
+		return nome;
+	}
+	
+	public StatusCliente getStatus() {
+		return status;
+	}
+	
+	public String getCpf() {
+		return cpf;
+	}
 }
